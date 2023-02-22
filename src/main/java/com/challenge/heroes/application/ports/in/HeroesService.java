@@ -3,13 +3,14 @@ package com.challenge.heroes.application.ports.in;
 import com.challenge.heroes.domain.Heroe;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface HeroesService {
 
     public List<Heroe> searchHeroesByName(String name);
 
-    public Heroe findHeroe(UUID id);
+    public Optional<Heroe> findHeroe(UUID id);
 
     public Heroe createHeroe(HeroeCommand nuevoHeroe);
 
