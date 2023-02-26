@@ -1,15 +1,21 @@
-package com.challenge.heroes.domain;
+package com.challenge.heroes.infraestructure.persistence.entity;
+
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
-public class Heroe {
+@Entity
+@Table(name = "HEROES")
+public class HeroeEntity {
 
+    @Id
+    @GeneratedValue()
     private UUID id;
 
+    @Column(name = "name")
     private String name;
 
-    public Heroe(String name) {
-        this.name = name;
+    public HeroeEntity() {
     }
 
     public UUID getId() {
@@ -26,13 +32,5 @@ public class Heroe {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Heroe{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
     }
 }

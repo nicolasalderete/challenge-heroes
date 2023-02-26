@@ -14,16 +14,30 @@ public interface HeroesService {
 
     public Heroe createHeroe(HeroeCommand nuevoHeroe);
 
-    public boolean deleteHeroeById(UUID id);
+    public String deleteHeroeById(UUID id);
 
-    public Heroe updateHeroe(String id, HeroeCommand heroeActualizado);
+    public Heroe updateHeroe(UUID id, HeroeCommand heroeActualizado);
+
 
     class HeroeCommand {
+
+        public String getName() {
+            return name;
+        }
 
         private String name;
 
         public HeroeCommand(String name) {
             this.name = name;
         }
+
+        @Override
+        public String toString() {
+            return "HeroeCommand{" +
+                    "name='" + name + '\'' +
+                    '}';
+        }
     }
+
+
 }

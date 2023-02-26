@@ -50,10 +50,9 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>8.5.13</version>
 				<configuration>
-					<url>jdbc:h2:mem:challengedb</url>
+					<url>jdbc:h2:file:~/h2/challenge-heroes</url>
 					<user>sa</user>
 					<password>password</password>
-					<locations>classpath:db/migration</locations>
 				</configuration>
 			</plugin>
 			<plugin>

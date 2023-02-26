@@ -3,6 +3,7 @@ package com.challenge.heroes.application.ports.out;
 import com.challenge.heroes.domain.Heroe;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface HeroesPersistence {
@@ -15,5 +16,7 @@ public interface HeroesPersistence {
 
     public List<Heroe> searchByName(String name);
 
-    public Heroe findById(UUID id);
+    public Optional<Heroe> findById(UUID id);
+
+    public List<Heroe> findAll();
 }
