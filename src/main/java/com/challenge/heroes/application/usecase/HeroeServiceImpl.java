@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 public class HeroeServiceImpl implements HeroesService {
@@ -31,8 +30,8 @@ public class HeroeServiceImpl implements HeroesService {
     }
 
     @Override
-    public Optional<Heroe> findHeroe(UUID id) {
-        return Optional.of(repository.findById(id).orElseThrow(() -> new HeroeNotFoundException(id.toString())));
+    public Heroe findHeroe(UUID id) {
+        return repository.findById(id).orElseThrow(() -> new HeroeNotFoundException(id.toString()));
     }
 
     @Override

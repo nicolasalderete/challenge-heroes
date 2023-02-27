@@ -4,6 +4,7 @@ import com.challenge.heroes.application.ports.in.HeroesService;
 import com.challenge.heroes.domain.Heroe;
 import com.challenge.heroes.infraestructure.web.HeroeRequest;
 import com.challenge.heroes.infraestructure.web.HeroesController;
+import com.challenge.heroes.infraestructure.web.exceptions.HeroeNotFoundException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.jupiter.api.Test;
@@ -80,7 +81,8 @@ public class HeroesControllerTest {
     public void getHeroesById() throws Exception {
 
         Heroe spiderman = new Heroe("Spiderman");
-        when(service.findHeroe(any(UUID.class))).thenReturn(Optional.of(spiderman));
+        spiderman.setId(UUID.randomUUID());
+        when(service.findHeroe(any(UUID.class))).thenReturn(spiderman);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/heroes/" + spiderman.getId()))
                 .andDo(print())
@@ -92,20 +94,21 @@ public class HeroesControllerTest {
     @Test
     public void getHeroesByIdNotExistReturnNotFound() throws Exception {
 
-        when(service.findHeroe(any(UUID.class))).thenReturn(Optional.empty());
+        when(service.findHeroe(any(UUID.class))).thenThrow(HeroeNotFoundException.class);
         String id = UUID.randomUUID().toString();
 
         mockMvc.perform(MockMvcRequestBuilders.get("/heroes/" + id))
                 .andDo(print())
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$").isNotEmpty())
-                .andExpect(jsonPath("$.message").value("No se encontro el Heroe con id " + id))
+                .andExpect(jsonPath("$.message").value("No se encontro el Heroe con id null"))
                 .andExpect(jsonPath("$.code").value("error-1"));
     }
 
     @Test
     public void postHeroeReturnNew() throws Exception {
         Heroe nuevoHeroe = new Heroe("Batman");
+        nuevoHeroe.setId(UUID.randomUUID());
         when(service.createHeroe(any())).thenReturn(nuevoHeroe);
 
         HeroeRequest request = new HeroeRequest("Batman");
