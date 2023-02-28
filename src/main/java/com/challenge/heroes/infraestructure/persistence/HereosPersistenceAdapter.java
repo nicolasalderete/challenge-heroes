@@ -48,8 +48,6 @@ public class HereosPersistenceAdapter implements HeroesPersistence {
         return true;
     }
 
-
-
     @Override
     public List<Heroe> searchByName(String name) {
         return mapper.entityListToDomainList(repository.findByNameContains(name));
@@ -58,7 +56,11 @@ public class HereosPersistenceAdapter implements HeroesPersistence {
     @Override
     public Optional<Heroe> findById(UUID id) {
         Optional<HeroeEntity> optionalHeroeEntity = repository.findById(id);
-        return Optional.of(mapper.entityToDomain(optionalHeroeEntity.get()));
+        if (optionalHeroeEntity.isEmpty()) {
+            return Optional.empty();
+        } else {
+            return Optional.of(mapper.entityToDomain(optionalHeroeEntity.get()));
+        }
     }
 
     @Override

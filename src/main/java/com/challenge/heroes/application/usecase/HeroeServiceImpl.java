@@ -31,7 +31,7 @@ public class HeroeServiceImpl implements HeroesService {
     }
 
     @Override
-    @Cacheable(value = "heroe_cache", key = "id")
+    @Cacheable("heroe")
     public Heroe findHeroe(UUID id) {
         return repository.findById(id).orElseThrow(() -> new HeroeNotFoundException(id.toString()));
     }

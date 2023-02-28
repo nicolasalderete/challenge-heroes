@@ -1,8 +1,9 @@
 package com.challenge.heroes.domain;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Heroe {
+public class Heroe implements Serializable {
 
     private UUID id;
 
@@ -10,6 +11,9 @@ public class Heroe {
 
     public Heroe(String name) {
         this.name = name;
+    }
+
+    public Heroe() {
     }
 
     public UUID getId() {

@@ -1,6 +1,5 @@
 package com.challenge.heroes.infraestructure.persistence;
 
-import com.challenge.heroes.domain.Heroe;
 import com.challenge.heroes.infraestructure.persistence.entity.HeroeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
