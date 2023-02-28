@@ -8,12 +8,12 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
-public class SpringFoxConfig {
+public class HeroesSwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
           .select()                                  
-          .apis(RequestHandlerSelectors.any())
+          .apis(RequestHandlerSelectors.basePackage("com.challenge.heroes.infraestructure.web"))
           .paths(PathSelectors.any())
           .build();                                           
     }

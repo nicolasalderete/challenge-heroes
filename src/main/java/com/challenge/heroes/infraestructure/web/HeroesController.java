@@ -4,6 +4,11 @@ import com.challenge.heroes.application.ports.in.HeroesService;
 import com.challenge.heroes.application.ports.in.HeroesService.HeroeCommand;
 import com.challenge.heroes.domain.Heroe;
 import com.challenge.heroes.utils.TimeMethod;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -25,12 +30,27 @@ public class HeroesController {
         this.service = service;
     }
 
+
+    @Operation(summary = "Get user by it id")
+    @ApiResponses(
+            value = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Heore information",
+                            content = {
+                                    @Content(
+                                            mediaType = "application/json",
+                                            schema = @Schema(implementation = Heroe.class))
+                            }),
+                    @ApiResponse(responseCode = "404", description = "Heroe not found", content = @Content)
+            })
     @GetMapping()
     @TimeMethod
     public ResponseEntity<List<Heroe>> getAllHeroes(@RequestParam(value = "name", defaultValue = "", required = false) String name) {
         LOG.info("Invoke GET /heroes with name {}", name);
         return ResponseEntity.ok(service.searchHeroesByName(name));
     }
+
 
     @GetMapping("/{id}")
     @TimeMethod
