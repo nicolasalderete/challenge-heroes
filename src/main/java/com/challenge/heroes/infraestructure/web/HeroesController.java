@@ -31,6 +31,14 @@ public class HeroesController {
     }
 
 
+
+    @GetMapping()
+    @TimeMethod
+    public ResponseEntity<List<Heroe>> getAllHeroes(@RequestParam(value = "name", defaultValue = "", required = false) String name) {
+        LOG.info("Invoke GET /heroes with name {}", name);
+        return ResponseEntity.ok(service.searchHeroesByName(name));
+    }
+
     @Operation(summary = "Get user by it id")
     @ApiResponses(
             value = {
@@ -44,14 +52,6 @@ public class HeroesController {
                             }),
                     @ApiResponse(responseCode = "404", description = "Heroe not found", content = @Content)
             })
-    @GetMapping()
-    @TimeMethod
-    public ResponseEntity<List<Heroe>> getAllHeroes(@RequestParam(value = "name", defaultValue = "", required = false) String name) {
-        LOG.info("Invoke GET /heroes with name {}", name);
-        return ResponseEntity.ok(service.searchHeroesByName(name));
-    }
-
-
     @GetMapping("/{id}")
     @TimeMethod
     public ResponseEntity<Heroe> getHeroe(@PathVariable(name = "id", required = true) String id) {
