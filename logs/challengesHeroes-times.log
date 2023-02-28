@@ -32,3 +32,9 @@
 2023-02-28 01:40:41,039 INFO  [http-nio-8080-exec-8] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getHeroe, timeMs=2,threadId=170
 2023-02-28 01:40:42,127 INFO  [http-nio-8080-exec-9] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getHeroe, timeMs=2,threadId=171
 2023-02-28 01:40:43,727 INFO  [http-nio-8080-exec-10] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getHeroe, timeMs=1,threadId=172
+2023-02-28 01:54:24,460 INFO  [http-nio-auto-1-exec-1] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getAllHeroes, timeMs=433,threadId=212
+2023-02-28 01:54:24,867 INFO  [http-nio-auto-1-exec-2] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getHeroe, timeMs=348,threadId=213
+2023-02-28 01:54:24,941 INFO  [http-nio-auto-1-exec-3] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=postHeroe, timeMs=11,threadId=214
+2023-02-28 01:56:06,524 INFO  [http-nio-8080-exec-2] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getAllHeroes, timeMs=253,threadId=162
+2023-02-28 01:56:18,470 INFO  [http-nio-8080-exec-4] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=postHeroe, timeMs=56,threadId=164
+2023-02-28 01:56:28,981 INFO  [http-nio-8080-exec-5] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getHeroe, timeMs=23,threadId=165
