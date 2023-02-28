@@ -1,4 +1,4 @@
-package com.challenge.heroes.infraestructure.web.exceptions;
+package com.challenge.heroes.application.usecase.exceptions;
 
 public class HeroeNotFoundException extends RuntimeException {
 

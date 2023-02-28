@@ -4,7 +4,7 @@ import com.challenge.heroes.application.ports.in.HeroesService;
 import com.challenge.heroes.domain.Heroe;
 import com.challenge.heroes.infraestructure.web.HeroeRequest;
 import com.challenge.heroes.infraestructure.web.HeroesController;
-import com.challenge.heroes.infraestructure.web.exceptions.HeroeNotFoundException;
+import com.challenge.heroes.application.usecase.exceptions.HeroeNotFoundException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 import static org.hamcrest.Matchers.hasSize;

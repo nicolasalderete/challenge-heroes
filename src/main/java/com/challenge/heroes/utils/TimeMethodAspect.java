@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class TimeMethodAspect
 {
    private static Logger LOG = LoggerFactory.getLogger(TimeMethodAspect.class);
-   @Around("execution(* *(..)) && @annotation(com.challenge.heroes.utils)")
+   @Around("execution(* *(..)) && @annotation(com.challenge.heroes.utils.TimeMethod)")
     public Object log(ProceedingJoinPoint point) throws Throwable
    {
       long start = System.currentTimeMillis();

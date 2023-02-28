@@ -1,0 +1,2 @@
+#logback.classic pattern: %d %-5level [%thread] %logger{0}: %msg%n
+2023-02-26 23:27:04,914 INFO  [http-nio-8080-exec-1] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getAllHeroes, timeMs=221,threadId=26

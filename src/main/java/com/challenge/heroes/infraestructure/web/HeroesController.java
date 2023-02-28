@@ -3,7 +3,6 @@ package com.challenge.heroes.infraestructure.web;
 import com.challenge.heroes.application.ports.in.HeroesService;
 import com.challenge.heroes.application.ports.in.HeroesService.HeroeCommand;
 import com.challenge.heroes.domain.Heroe;
-import com.challenge.heroes.infraestructure.web.exceptions.HeroeNotFoundException;
 import com.challenge.heroes.utils.TimeMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

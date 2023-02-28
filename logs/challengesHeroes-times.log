@@ -1,0 +1,1 @@
+2023-02-27 00:06:13,520 INFO  [http-nio-8080-exec-4] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getAllHeroes, timeMs=241,threadId=125

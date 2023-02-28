@@ -3,9 +3,10 @@ package com.challenge.heroes.application.usecase;
 import com.challenge.heroes.application.ports.in.HeroesService;
 import com.challenge.heroes.application.ports.out.HeroesPersistence;
 import com.challenge.heroes.domain.Heroe;
-import com.challenge.heroes.infraestructure.web.exceptions.HeroeNotFoundException;
+import com.challenge.heroes.application.usecase.exceptions.HeroeNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 import java.util.UUID;
@@ -30,6 +31,7 @@ public class HeroeServiceImpl implements HeroesService {
     }
 
     @Override
+    @Cacheable(value = "heroe_cache", key = "id")
     public Heroe findHeroe(UUID id) {
         return repository.findById(id).orElseThrow(() -> new HeroeNotFoundException(id.toString()));
     }

@@ -1,5 +1,6 @@
 package com.challenge.heroes.infraestructure.web.exceptions;
 
+import com.challenge.heroes.application.usecase.exceptions.HeroeNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
