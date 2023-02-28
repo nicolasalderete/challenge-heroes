@@ -1,4 +1,0 @@
-2023-02-27 00:06:13,520 INFO  [http-nio-8080-exec-4] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=getAllHeroes, timeMs=241,threadId=125
-2023-02-28 00:20:59,098 INFO  [http-nio-auto-1-exec-1] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=postHeroe, timeMs=622,threadId=121
-2023-02-28 00:23:49,871 INFO  [http-nio-auto-1-exec-1] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=postHeroe, timeMs=363,threadId=121
-2023-02-28 00:27:19,525 INFO  [http-nio-auto-1-exec-1] TimeMethodAspect: className=com.challenge.heroes.infraestructure.web.HeroesController, methodName=postHeroe, timeMs=378,threadId=121
